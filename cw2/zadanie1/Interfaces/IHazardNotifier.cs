@@ -3,6 +3,5 @@
     public interface IHazardNotifier
     {
         void CheckHazard();
-        string Notify();
     }
 }
