@@ -51,5 +51,10 @@ namespace zadanie1.Models
             base.UnloadCargo(mass);
             CheckHazard();
         }
+
+        public override string GetInfo()
+        {
+            return base.GetInfo() + $", \n Stored cargo: {ProductType}";
+        }
     }
 }

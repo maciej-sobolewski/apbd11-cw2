@@ -71,5 +71,10 @@ namespace zadanie1.Models
 
             Console.WriteLine($"Container {serialNumber} has been transferred.");
         }
+
+        public string GetInfo()
+        {
+            return $"Max speed: {Vmax} kn, \n Max amount of containers onboard: {MaxAmountOfContainers}, \n Max weight of containers onboard: {MaxWeightOfContainers}, \n Cargo info: \n" + string.Join(Environment.NewLine, Containers.Select(c => c.GetInfo()));
+        }
     }
 }

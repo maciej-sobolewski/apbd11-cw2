@@ -34,5 +34,10 @@ namespace zadanie1.Models
 
             CheckHazard();
         }
+
+        public override string GetInfo()
+        {
+            return base.GetInfo() + $", \n Pressure: {Pressure} atm";
+        }
     }
 }

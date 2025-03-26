@@ -56,5 +56,10 @@ namespace zadanie1.Models
 
             PayloadMass -= mass;
         }
+
+        public virtual string GetInfo()
+        {
+            return $"Payload mass: {PayloadMass} kg, \n Height: {Height} cm, \n Self-weight: {SelfWeight} kg, \n Depth: {Depth} cm, \n Serial number: {SerialNumber}, \n MaxPayloadMass: {MaxPayloadMass} kg";
+        }
     }
 }

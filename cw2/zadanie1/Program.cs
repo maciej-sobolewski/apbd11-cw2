@@ -58,5 +58,13 @@ class Program
         ship1.ReplaceContainers("KON-B-1", liquidContainer);
 
         CargoShip.TransferContainer(ship1, ship2, "KON-A-1");
+
+        foreach (BaseContainer container in containers)
+        {
+            Console.WriteLine(container.GetInfo());
+        }
+
+        Console.WriteLine(ship1.GetInfo());
+        Console.WriteLine(ship2.GetInfo());
     }
 }

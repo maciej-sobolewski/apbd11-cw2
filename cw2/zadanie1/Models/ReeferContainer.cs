@@ -43,5 +43,10 @@ namespace zadanie1.Models
                 throw new KeyNotFoundException($"Could not find temperature requirements for product: {ProductType}");
             }
         }
+
+        public override string GetInfo()
+        {
+            return base.GetInfo() + $", \n Stored cargo: {ProductType}, \n Temperature: {Temperature} degrees C";
+        }
     }
 }
