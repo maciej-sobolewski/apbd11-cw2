@@ -40,7 +40,7 @@ namespace zadanie1.Models
             }
             else 
             {
-                throw new KeyNotFoundException($"Did not find temperature requirements for product: {ProductType}");
+                throw new KeyNotFoundException($"Could not find temperature requirements for product: {ProductType}");
             }
         }
     }
