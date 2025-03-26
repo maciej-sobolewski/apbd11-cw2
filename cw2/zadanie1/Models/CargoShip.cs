@@ -20,7 +20,19 @@ namespace zadanie1.Models
             Containers.Add(container);
         }
 
-        public void ReplceContainers(string serialNumberToReplace, BaseContainer newContainer)
+        public void UnloadContainer(BaseContainer container)
+        {
+            if (Containers.Contains(container))
+            {
+                Containers.Remove(container);
+            }
+            else
+            {
+                Console.WriteLine("Given container does not exist on this ship.");
+            }
+        }
+
+        public void ReplaceContainers(string serialNumberToReplace, BaseContainer newContainer)
         {
             int index = Containers.FindIndex(c => c.SerialNumber == serialNumberToReplace);
 

@@ -1,14 +1,29 @@
-﻿using zadanie1.Exceptions;
+﻿using System.Text.RegularExpressions;
+using zadanie1.Exceptions;
 
 namespace zadanie1.Models
 {
     public class BaseContainer
     {
+        private string _serialNumber;
         public double PayloadMass { get; set; }
         public int Height { get; set; }
         public int SelfWeight { get; set; }
         public int Depth { get; set; }
-        public required string SerialNumber { get; set; }
+        public required string SerialNumber 
+        { 
+            get => _serialNumber; 
+            set {
+                if (Regex.IsMatch(value, @"^KON-[A-Z]-\d+$"))
+                {
+                    _serialNumber = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Serial number must match the format KON-{letter}-{number}");
+                }
+            } 
+        }
         public double MaxPayloadMass { get; set; }
 
         public virtual void LoadCargo(double mass)
